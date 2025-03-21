@@ -157,9 +157,11 @@ nav ul li a:hover{
 
 .gallery {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     background-color: #f9f9f9;
     padding: 50px 20px;
+    gap: 20px;
     
 }
 .gallery-text {
@@ -182,7 +184,7 @@ nav ul li a:hover{
 }
 
 .gallery img {
-    width: 20%;
+    width: calc(25% - 20px);
     border: 1px solid #ccc;
     border-radius: 5px;
     transition: transform 0.3s ease;
@@ -190,6 +192,28 @@ nav ul li a:hover{
 
 .gallery img:hover {
     transform: scale(1.1);
+}
+@media(max-width: 768px){
+    .gallery{
+        flex-direction: row;
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding: 20px 10px;
+    }
+    .gallery img{
+        width: 150px;
+        flex: 0 0 auto;
+    }
+    .gallery-text{
+        text-align: center;
+        margin-left: 0;
+    }
+    .gallery-text h2{
+        font-size: 2rem;
+    }
+    .gallery-text p{
+        font-size: 1.2rem;
+    }
 }
 #shirt {
     padding: 50px 20px; /* Adds padding around the section */
